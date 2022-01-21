@@ -1,4 +1,5 @@
-import { Button, makeStyles } from '@material-ui/core';
+import React from 'react';
+import { makeStyles } from '@material-ui/core';
 import { PresentNum } from 'component';
 const useStyles = makeStyles({
   container: {
@@ -11,22 +12,30 @@ interface Line {
 }
 function RandomNumber(props: Line) {
   const classes = useStyles();
+  const numArr = Array.from({ length: props.line }, () => 1);
 
   return (
     <div className={classes.container}>
-      <EachRandomNumber />
+      {numArr.map(() => (
+        <EachRandomNumber />
+      ))}
     </div>
   );
 }
-
-function EachRandomNumber() {
-  const initData: number[] = [1, 1, 1, 1, 1, 1];
-  //   console.log(line);
-  const data = initData.map((num) => generateNum());
+function EachRandomNumber(): JSX.Element {
+  const data = new Array();
+  for (let i = 0; i < 6; i++) {
+    const genNum = generateNum();
+    data.push(genNum);
+    for (let j = 0; j < i; j++) {
+      if (data[j] === genNum) {
+        data.pop();
+        i--;
+      }
+    }
+  }
   return <PresentNum num={data} />;
 }
+const generateNum = () => Math.floor(Math.random() * 44 + 1);
 
-function generateNum() {
-  return Math.floor(Math.random() * 44 + 1);
-}
-export default RandomNumber;
+export default React.memo(RandomNumber);
