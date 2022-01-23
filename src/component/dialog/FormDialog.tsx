@@ -29,7 +29,7 @@ export default function FormDialog(props: IProps) {
   return (
     <Dialog
       open={props.open ?? false}
-      onClose={props.onClose}
+      onClose={props.handleClose}
       aria-labelledby="form-dialog-title"
       maxWidth={false}
     >

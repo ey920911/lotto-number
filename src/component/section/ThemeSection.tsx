@@ -30,7 +30,7 @@ function ThemeSection() {
       <Button onClick={handleHelpOpen}>
         <ContactSupportIcon />
       </Button>
-      <InfoDialog openInit={open} />
+      <InfoDialog openInit={open} handleHelpClose={handleHelpClose} />
     </div>
   );
 }

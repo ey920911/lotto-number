@@ -21,38 +21,30 @@ const useStyles = makeStyles(() => ({
 
 interface IProps {
   openInit: boolean;
+  handleHelpClose: any;
 }
 
 function InfoDialog(props: IProps) {
   const classes = useStyles();
-  const [open, setOpen] = useState(props.openInit);
-
-  console.log('info', props.openInit);
-
-  const handleClose = useCallback(() => {
-    setOpen(false);
-  }, []);
-
-  const handleOpen = useCallback(() => {
-    setOpen(true);
-  }, []);
 
   return (
     <FormDialog
-      open={open}
+      open={props.openInit}
       dialogTitle="숫자 출력 정보"
-      //   dialogContent={<></>}
       buttons={
         <div className={classes.buttomContainer}>
-          <Button className="dialog-cancel-button" onClick={handleClose}>
+          {/* <Button
+            className="dialog-cancel-button"
+            onClick={props.handleHelpClose}
+          >
             취소
-          </Button>
-          <Button className="dialog-button" onClick={handleOpen}>
+          </Button> */}
+          <Button className="dialog-button" onClick={props.handleHelpClose}>
             확인
           </Button>
         </div>
       }
-      handleClose={handleClose}
+      handleClose={props.handleHelpClose}
     />
   );
 }

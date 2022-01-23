@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../App.css';
 import { BrowserRouter, useHistory } from 'react-router-dom';
 
 function LottoFooter() {
