@@ -13,7 +13,7 @@ import {
 interface IProps {
   open: boolean;
   buttons: any;
-  dialogContent?: React.Component;
+  dialogContent: any;
   onClose?: any;
   handleClose: any;
   dialogTitle: string;

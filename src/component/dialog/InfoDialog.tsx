@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
-import { makeStyles, Button } from '@material-ui/core';
+import { makeStyles, Button, Tab } from '@material-ui/core';
 import FormDialog from './FormDialog';
+import DescriptContent from './DescriptContent';
 
 const useStyles = makeStyles(() => ({
   buttomContainer: {
@@ -26,11 +27,13 @@ interface IProps {
 
 function InfoDialog(props: IProps) {
   const classes = useStyles();
+  console.log(typeof (<DescriptContent />));
 
   return (
     <FormDialog
       open={props.openInit}
       dialogTitle="숫자 출력 정보"
+      dialogContent={<DescriptContent />}
       buttons={
         <div className={classes.buttomContainer}>
           {/* <Button
