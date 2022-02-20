@@ -12,7 +12,6 @@ function DescriptContent() {
   };
 
   const data = descriptData.description;
-  console.log('keys ', data.random);
 
   return (
     <Box sx={{ width: '30rem', height: '10rem', typography: 'body1' }}>
@@ -24,9 +23,13 @@ function DescriptContent() {
             ))}
           </TabList>
         </Box>
-        {Object.keys(data).map((theme) => (
-          <TabPanel value={theme}> {data[theme]} </TabPanel>
-        ))}
+        {/* {Object.keys(data).map((theme2) => {
+          console.log('theme2', typeof theme2);
+          return <TabPanel value={theme2}> {data[theme2]} </TabPanel>;
+        })} */}
+        <TabPanel value="birth"> {data['birth']} </TabPanel>
+        <TabPanel value="random"> {data['random']} </TabPanel>
+        <TabPanel value="dream"> {data['dream']} </TabPanel>
       </TabContext>
     </Box>
   );
