@@ -19,7 +19,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-router": "^5.1.17",
     "@types/react-router-dom": "^5.3.2",
-    "i": "^0.3.7",
+    "lodash": "^4.17.21",
     "install": "^0.13.0",
     "npm": "^8.3.1",
     "react": "^17.0.2",
@@ -54,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "@types/lodash": "^4.14.178"
   }
 }
