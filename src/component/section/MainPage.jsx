@@ -29,10 +29,10 @@ function MainPage() {
           <RandomNumber line={lottoLine} />
         </Route>
         <Route path="/dream">
-          <Dream />
+          <Dream line={lottoLine} />
         </Route>
         <Route path="/birth">
-          <Birth />
+          <Birth line={lottoLine} />
         </Route>
       </Switch>
       <Redirect from="*" to="/" />
