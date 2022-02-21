@@ -3,7 +3,7 @@
 로또 번호 추천 프로그램
 
 ##  :scroll: 기술스텍
-React, typescript, material ui, React-router, odash
+React, typescript, material ui, React-router, Lodash
 
 ## 기능
 
