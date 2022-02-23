@@ -16,7 +16,6 @@ interface Data {
 function SearchList(data: Data) {
   const filterData = data.filteredData;
   const classes = useStyles();
-  const searchData = 'te';
   return (
     <div className={classes.container}>
       {filterData.map((data) => (

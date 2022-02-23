@@ -3,28 +3,10 @@ import { TextField } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import SearchList from './SearchList';
 import { debounce } from 'lodash';
+import { DREAM_WORDS } from './dreamData';
 interface Line {
   line: number;
 }
-
-const DREAM_WORDS = [
-  '흰머리',
-  '갓난아기',
-  '황재',
-  '임금',
-  '할아버지',
-  '할머니',
-  '첫기차',
-  '깡패',
-  '진주',
-  '해물',
-  '해산물',
-  'test',
-  '임금',
-  '할아버지',
-  '할머니',
-  '첫기차',
-];
 
 function Dream(props: Line) {
   const history = useHistory();
@@ -37,10 +19,11 @@ function Dream(props: Line) {
   // debounce 적용으로 0.5초마다 textFieldChange 인식하도록 함
   const textFieldChange = debounce((event: any) => {
     const input = event.target.value;
-    console.log('event input', event.target.value);
-    const filter = DREAM_WORDS.filter((item) => item.startsWith(input));
-    console.log('filter', filter);
-    setFilter(filter);
+    const words = Object.values(DREAM_WORDS);
+    const filter = words.map((wordsArr) =>
+      wordsArr.filter((item) => item.startsWith(input))
+    );
+    setFilter(filter.flat(2));
   }, 500);
 
   return (
