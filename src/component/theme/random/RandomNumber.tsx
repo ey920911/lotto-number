@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import { PresentNum } from 'component';
-import EachRandomNumber from './GenRandomNum';
+import GenRandomNum from './GenRandomNum';
 
 const useStyles = makeStyles({
   container: {
@@ -19,10 +18,10 @@ function RandomNumber(props: Line) {
   return (
     <div className={classes.container}>
       {numArr.map(() => (
-        <EachRandomNumber />
+        <GenRandomNum />
       ))}
     </div>
   );
 }
 
-export default React.memo(RandomNumber);
+export default RandomNumber;

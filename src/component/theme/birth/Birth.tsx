@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, makeStyles, Button } from '@material-ui/core';
 import { BrowserRouter, useHistory } from 'react-router-dom';
-import EachRandomNumber from '../random/GenRandomNum';
+import GenRandomNum from '../random/GenRandomNum';
 
 const useStyle = makeStyles({
   birthField: {
@@ -33,7 +33,7 @@ function Birth(props: Line) {
       <TextField className={classes.birthField} label="yymmdd" />
       <Button onClick={handleClick}> 생성 </Button>
       <div className={classes.container}>
-        {create && numArr.map(() => <EachRandomNumber />)}
+        {create && numArr.map(() => <GenRandomNum />)}
       </div>
     </div>
   );

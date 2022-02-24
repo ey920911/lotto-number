@@ -1,37 +1,41 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { ListItem, ListItemText } from '@material-ui/core';
+import { inject } from 'mobx-react';
+import DreamStore from 'store/DreamStore';
 
 const useStyles = makeStyles({
   item: {
-    width: '6rem',
+    display: 'flex',
+    alignItems: 'center',
+    height: '1.5rem',
+    padding: '0 1rem',
     margin: '0.2rem',
     textAlign: 'center',
     borderRadius: '30px',
+    border: 0,
     backgroundColor: '#FBEFFF',
+    '&.hover': {
+      backgroundColor: 'gray',
+    },
   },
 });
 
 interface FilterItem {
   item: String;
 }
-function SearchListItem(filterItem: FilterItem) {
-  const searchText = 'test';
+export default function SearchListItem(filterItem: FilterItem) {
   const classes = useStyles();
 
   const handleListItemClick = (event: any) => {
-    const value = event.target.outerText;
-    // TODO item 클릭시 하단에 선택한 item 뜨게하기
+    const value = event.target.innerText;
+    console.dir(event.target.innerText);
+    DreamStore.addItem(value);
   };
 
   return (
-    <ListItem
-      className={classes.item}
-      button
-      onClick={(e) => handleListItemClick(e)}
-    >
-      <ListItemText primary={filterItem.item} />
-    </ListItem>
+    <button className={classes.item} onClick={(e) => handleListItemClick(e)}>
+      {filterItem.item}
+    </button>
   );
 }
-export default SearchListItem;
+inject('DreamStore');
