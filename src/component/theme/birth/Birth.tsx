@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextField, makeStyles, Button } from '@material-ui/core';
-import { BrowserRouter, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import GenRandomNum from '../random/GenRandomNum';
 
 const useStyle = makeStyles({
@@ -18,7 +18,6 @@ interface Line {
 }
 
 function Birth(props: Line) {
-  const history = useHistory();
   const classes = useStyle();
   const [create, setCreate] = React.useState(false);
 

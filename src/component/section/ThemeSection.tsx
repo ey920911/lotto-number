@@ -39,7 +39,7 @@ const ThemeButton = (props: IProps) => {
   const history = useHistory();
   const handleClick = (event: MouseEvent) => {
     const path = event.currentTarget.id;
-    history.push(`/${path}`);
+    history.push(`/theme/${path}`);
   };
 
   return (
