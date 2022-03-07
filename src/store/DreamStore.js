@@ -38,6 +38,11 @@ export default new (class DreamStore {
     return matchNum;
   }
 
+  @action
+  initWords() {
+    this.registeredWords = [];
+  }
+
   get words() {
     return this.registeredWords;
   }

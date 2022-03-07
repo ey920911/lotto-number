@@ -51,15 +51,21 @@ function Dream(props: Line) {
     DreamStore.deleteItem(value);
   };
 
+  React.useEffect(() => {
+    DreamStore.initWords();
+  }, []);
+
   // debounce 적용으로 0.5초마다 textFieldChange 인식하도록 함
   const textFieldChange = debounce((event: any) => {
     setCreate(false);
     const input = event.target.value;
     const words = Object.values(DREAM_WORDS);
+
     const filter = words.map((wordsArr) =>
       wordsArr.filter((item) => item.startsWith(input))
     );
     setFilter(filter.flat(2));
+    if (input === '') setFilter([]);
   }, 500);
 
   return (

@@ -1,41 +1,44 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { Button, Select, MenuItem } from '@material-ui/core';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import {
-  LottoFooter,
   ThemeSection,
   Dream,
   RandomNumber,
   Birth,
+  LinePage,
+  IntroPage,
 } from 'component';
 
 function MainPage() {
   const [lottoLine, setLottoLine] = React.useState(5);
+  const history = useHistory();
 
   const handleChange = (event: any) => {
-    setLottoLine(event.target.value);
+    const value = event.target.value;
+    setLottoLine(value);
+    history.push('/theme');
   };
+
   return (
     <div className="main-section">
-      <Select value={lottoLine} label="number_line" onChange={handleChange}>
-        <MenuItem value={5}>5</MenuItem>
-        <MenuItem value={10}>10</MenuItem>
-        <MenuItem value={20}>20</MenuItem>
-        <MenuItem value={30}>30</MenuItem>
-      </Select>
-      <ThemeSection />
+      <IntroPage />
       <Switch>
-        <Route path="/random">
+        <Route exact path="/number">
+          <LinePage line={lottoLine} handleChange={handleChange} />
+        </Route>
+        <Route exact path="/theme">
+          <ThemeSection />
+        </Route>
+        <Route path="/theme/random">
           <RandomNumber line={lottoLine} />
         </Route>
-        <Route path="/dream">
+        <Route path="/theme/dream">
           <Dream line={lottoLine} />
         </Route>
-        <Route path="/birth">
+        <Route path="/theme/birth">
           <Birth line={lottoLine} />
         </Route>
       </Switch>
-      <Redirect from="*" to="/" />
     </div>
   );
 }
