@@ -6,6 +6,7 @@ const useStyles = makeStyles({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: 'center',
   },
 });
 

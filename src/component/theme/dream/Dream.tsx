@@ -12,6 +12,8 @@ const useStyles = makeStyles({
   wordsContainer: {
     display: 'flex',
     flexWrap: 'wrap',
+    margin: '1rem 0',
+    justifyContent: 'center',
   },
   lottoContainer: {
     display: 'flex',
