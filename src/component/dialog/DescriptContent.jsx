@@ -4,10 +4,13 @@ import Tab from '@mui/material/Tab';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import descriptData from './description.json';
 
-function DescriptContent() {
+function DescriptContent(props) {
   const [value, setValue] = useState('random');
-
-  const handleChange = (event: any, newValue: any) => {
+  console.log('test22: ', props);
+  // const handleChange = (event: any, newValue: any) => {
+  //   setValue(newValue);
+  // };
+  const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
