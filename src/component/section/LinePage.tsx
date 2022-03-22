@@ -10,13 +10,15 @@ const LOTTO_LINE = [1, 5, 10, 20, 30];
 
 export default function LinePage(props: Line) {
   const [line, setLine] = React.useState(props.line);
-  const history = useHistory();
+
   return (
     <>
       <div>로또 줄 수를 입력하세요.</div>
-      <Select value={line} label="number_line" onChange={props.handleChange}>
+      <Select value={line} label="number_line">
         {LOTTO_LINE.map((num) => (
-          <MenuItem value={num}>{num}</MenuItem>
+          <MenuItem value={num} onClick={props.handleChange}>
+            {num}
+          </MenuItem>
         ))}
       </Select>
     </>

@@ -14,7 +14,9 @@ function MainPage() {
   const history = useHistory();
 
   const handleChange = (event: any) => {
-    const value = event.target.value;
+    const value = event.target.dataset.value;
+    console.log('test');
+    console.dir(event.target);
     setLottoLine(value);
     history.push('/theme');
   };
