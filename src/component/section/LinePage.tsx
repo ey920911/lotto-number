@@ -6,18 +6,17 @@ interface Line {
   line: number;
   handleChange: (event: any) => void;
 }
+const LOTTO_LINE = [5, 10, 20, 30];
 export default function LinePage(props: Line) {
   const [line, setLine] = React.useState(props.line);
   const history = useHistory();
-
   return (
     <>
       <div>로또 줄 수를 입력하세요.</div>
       <Select value={line} label="number_line" onChange={props.handleChange}>
-        <MenuItem value={5}>5</MenuItem>
-        <MenuItem value={10}>10</MenuItem>
-        <MenuItem value={20}>20</MenuItem>
-        <MenuItem value={30}>30</MenuItem>
+        {LOTTO_LINE.map((num) => (
+          <MenuItem value={num}>{num}</MenuItem>
+        ))}
       </Select>
     </>
   );
