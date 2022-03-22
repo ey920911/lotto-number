@@ -6,7 +6,8 @@ interface Line {
   line: number;
   handleChange: (event: any) => void;
 }
-const LOTTO_LINE = [5, 10, 20, 30];
+const LOTTO_LINE = [1, 5, 10, 20, 30];
+
 export default function LinePage(props: Line) {
   const [line, setLine] = React.useState(props.line);
   const history = useHistory();

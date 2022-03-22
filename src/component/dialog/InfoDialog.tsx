@@ -27,7 +27,6 @@ interface IProps {
 
 function InfoDialog(props: IProps) {
   const classes = useStyles();
-  console.log(typeof (<DescriptContent />));
 
   return (
     <FormDialog

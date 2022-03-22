@@ -10,7 +10,7 @@ import {
 } from 'component';
 
 function MainPage() {
-  const [lottoLine, setLottoLine] = React.useState(5);
+  const [lottoLine, setLottoLine] = React.useState(1);
   const history = useHistory();
 
   const handleChange = (event: any) => {
