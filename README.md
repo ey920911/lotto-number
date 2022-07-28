@@ -23,4 +23,6 @@ React, typescript, material ui, React-router, Lodash
 ## :computer: 화면
 ![image](https://user-images.githubusercontent.com/7992888/158790593-dee513b3-f5ff-40df-a0c9-0243ac801328.png)
 
+## 기타
 
+* 가중치 랜덤 로직 관련 설명: https://blog.naver.com/ey920911/222797490814
