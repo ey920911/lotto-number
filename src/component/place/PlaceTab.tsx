@@ -1,0 +1,63 @@
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core';
+import { Route, Switch, useHistory } from 'react-router-dom';
+import { Tabs, Tab, keyframes } from '@mui/material';
+import { PLACE } from 'data/constants/Constants';
+import { idText } from 'typescript';
+import PlaceArea from './PlaceArea';
+import { useEffect } from 'react';
+
+const useStyles = makeStyles({
+  tabContainer: { display: 'flex', flexGrow: 1 },
+});
+
+function PlaceTab() {
+  const classes = useStyles();
+  const history = useHistory();
+  const [tabId, setTabId] = useState(0);
+  const palceArray = Object.entries(PLACE);
+
+  useEffect(() => {
+    history.push('/place/all');
+  }, []);
+
+  const handleChange = (
+    event: React.SyntheticEvent<Element, Event>,
+    value: string
+  ) => {
+    const idx = parseInt(value);
+    const areaPath = `/place/${palceArray[idx][0]}`;
+    setTabId(idx);
+    history.push(areaPath);
+  };
+
+  return (
+    <>
+      <p>로또 명당 TOP 5</p>
+      <div className={classes.tabContainer}>
+        <Tabs
+          id="hot-palce-area"
+          orientation="vertical"
+          value={tabId}
+          onChange={handleChange}
+        >
+          {palceArray.map(([key, value]) => (
+            <Tab label={value} />
+          ))}
+        </Tabs>
+
+        <Switch>
+          {palceArray.map(([key, value]) => {
+            const url = `/place/${key}`;
+            return (
+              <Route exact path={url}>
+                <PlaceArea name={key} />
+              </Route>
+            );
+          })}
+        </Switch>
+      </div>
+    </>
+  );
+}
+export default PlaceTab;

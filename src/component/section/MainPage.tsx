@@ -7,6 +7,7 @@ import {
   Birth,
   LinePage,
   IntroPage,
+  PlaceMainPage,
 } from 'component';
 
 function MainPage() {
@@ -15,7 +16,6 @@ function MainPage() {
 
   const handleChange = (event: any) => {
     const value = event.target.dataset.value;
-    console.log('test');
     console.dir(event.target);
     setLottoLine(value);
     history.push('/theme');
@@ -25,8 +25,11 @@ function MainPage() {
     <div className="main-section">
       <IntroPage />
       <Switch>
-        <Route exact path="/number">
+        <Route exact path="/lotto_number">
           <LinePage line={lottoLine} handleChange={handleChange} />
+        </Route>
+        <Route path="/place">
+          <PlaceMainPage />
         </Route>
         <Route exact path="/theme">
           <ThemeSection />

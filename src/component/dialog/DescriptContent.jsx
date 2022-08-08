@@ -6,7 +6,7 @@ import descriptData from './description.json';
 
 function DescriptContent(props) {
   const [value, setValue] = useState('random');
-  console.log('test22: ', props);
+
   // const handleChange = (event: any, newValue: any) => {
   //   setValue(newValue);
   // };
