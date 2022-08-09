@@ -8,7 +8,15 @@ import PlaceArea from './PlaceArea';
 import { useEffect } from 'react';
 
 const useStyles = makeStyles({
-  tabContainer: { display: 'flex', flexGrow: 1 },
+  tabContainer: { display: 'flex' },
+  tabStyle: {
+    '&.MuiTabs-root': {
+      minWidth: '100px',
+      marginTop: '3rem',
+      '&.Mui-selected': { backgroundColor: 'white', color: 'black' },
+    },
+    '& .MuiTabs-indicator': { backgroundColor: 'white' },
+  },
 });
 
 function PlaceTab() {
@@ -33,13 +41,14 @@ function PlaceTab() {
 
   return (
     <>
-      <p>로또 명당 TOP 5</p>
+      <p>지역 별 로또 명당 TOP 5</p>
       <div className={classes.tabContainer}>
         <Tabs
           id="hot-palce-area"
           orientation="vertical"
           value={tabId}
           onChange={handleChange}
+          className={classes.tabStyle}
         >
           {palceArray.map(([key, value]) => (
             <Tab label={value} />
