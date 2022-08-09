@@ -4,7 +4,7 @@ function PlaceItemMap({ name = '', x = 37.350078, y = 127.108952 }) {
   return (
     <Map
       center={{ lat: x, lng: y }}
-      style={{ width: '90%', height: '30rem', margin: '1rem 5rem' }}
+      style={{ width: '90%', height: '30rem', margin: '1rem 1rem' }}
     >
       <MapMarker position={{ lat: x, lng: y }}>
         <div>{name}</div>

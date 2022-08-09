@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Tabs, Tab, keyframes } from '@mui/material';
 import { PLACE } from 'data/constants/Constants';
-import { idText } from 'typescript';
 import PlaceArea from './PlaceArea';
 import { useEffect } from 'react';
 
@@ -11,7 +10,7 @@ const useStyles = makeStyles({
   tabContainer: { display: 'flex' },
   tabStyle: {
     '&.MuiTabs-root': {
-      minWidth: '100px',
+      minWidth: '1rem',
       marginTop: '3rem',
       '&.Mui-selected': { backgroundColor: 'white', color: 'black' },
     },
