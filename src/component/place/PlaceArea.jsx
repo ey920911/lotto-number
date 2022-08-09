@@ -18,6 +18,13 @@ function PlaceArea({ name = 'all' }) {
     setVisiblePage(1);
   }, [name]);
 
+  const handleObserver = useCallback((entries) => {
+    const target = entries[0];
+    if (target.isIntersecting) {
+      setVisiblePage((prev) => prev + 1);
+    }
+  }, []);
+
   useEffect(() => {
     const option = {
       root: null,
@@ -28,13 +35,6 @@ function PlaceArea({ name = 'all' }) {
     console.log('loader.current', loader.current);
     if (loader.current) observer.observe(loader.current);
   }, [handleObserver]);
-
-  const handleObserver = useCallback((entries) => {
-    const target = entries[0];
-    if (target.isIntersecting) {
-      setVisiblePage((prev) => prev + 1);
-    }
-  }, []);
 
   return (
     <div className={classes.placeContainer}>

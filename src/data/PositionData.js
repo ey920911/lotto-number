@@ -24,6 +24,31 @@ const ALL_DATA = {
     location: '경기 용인시 기흥구 하갈동 171-1',
     position: [37.4817993, 127.0154326],
   },
+  세진전자통신: {
+    prizeNum: 18,
+    location: '대구 서구 평리동 1094-4',
+    position: [35.871901, 128.5552024],
+  },
+  로또명당인주점: {
+    prizeNum: 15,
+    location: '충남 아산시 인주면 신성리 신성리 188-8',
+    position: [36.8778269, 126.8982918],
+  },
+  목화휴게소: {
+    prizeNum: 15,
+    location: '경남 사천시 용현면 주문리 5-3',
+    position: [35.0019545, 128.0541785],
+  },
+  잠실매점: {
+    prizeNum: 14,
+    location: '서울 송파구 신천동 7-18호',
+    position: [37.5188609, 127.0992536],
+  },
+  GS25양산문성: {
+    prizeNum: 13,
+    location: '경남 양산시 평산동 31-5',
+    position: [35.384916, 129.1550752],
+  },
 };
 
 const SEOUL_DATA = {
@@ -51,6 +76,31 @@ const SEOUL_DATA = {
     prizeNum: 10,
     location: '서울 서초3동 1449-6 4층 동행복권본사',
     position: [37.4817993, 127.0154326],
+  },
+  묵동식품: {
+    prizeNum: 9,
+    location: '서울 중랑구 묵동 238-11',
+    position: [37.6124311, 127.0770497],
+  },
+  갈렙분식한식: {
+    prizeNum: 9,
+    location: '서울 장랑구 망우동 490-13',
+    position: [37.5981602, 127.0952748],
+  },
+  월드24시: {
+    prizeNum: 8,
+    location: '서울 은평구 갈현1동 398-1',
+    position: [37.619209, 126.9197683],
+  },
+  가판점: {
+    prizeNum: 8,
+    location: '서울 영등포구 당산동6가 331-1',
+    position: [37.5344336, 126.901288],
+  },
+  양광정보통신: {
+    prizeNum: 8,
+    location: '서울 성북구 하월곡동 37-18',
+    position: [37.6018682, 127.0417682],
   },
 };
 
@@ -80,6 +130,31 @@ const KYEONG_GI_DATA = {
     location: '경기 평택시 지산동 755-1',
     position: [37.0818082, 127.0564079],
   },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
 };
 const INCHEON_DATA = {
   라이프마트: {
@@ -107,6 +182,31 @@ const INCHEON_DATA = {
     location: '인천 계양구 계산동 1076-7번지 도쿄프라자 1층 2호',
     position: [37.5357287, 126.7362718],
   },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
 };
 const KEONG_BUCK_DATA = {
   로또복권황성점: {
@@ -134,6 +234,31 @@ const KEONG_BUCK_DATA = {
     location: '경북 문경시 모전동 81-89',
     position: [36.5881029, 128.1929588],
   },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
 };
 const KYEONG_NAM_DATA = {
   목화휴게소: {
@@ -188,6 +313,31 @@ const JEUN_BUCK_DATA = {
     location: '전북 덕진구 인후동1가 904-1',
     position: [35.8281522, 127.1647006],
   },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
+  // :{
+  //   prizeNum: ,
+  //   location: '',
+  //   position: [, ],
+  // },
 };
 const JEUN_NAM_DATA = {
   알리바이: {
