@@ -13,3 +13,6 @@ export { default as Birth } from './theme/birth/Birth';
 
 // presentNumber
 export { default as PresentNum } from './presentNumber/PresentNum';
+
+// place
+export { default as PlaceMainPage } from './place/PlaceTab';

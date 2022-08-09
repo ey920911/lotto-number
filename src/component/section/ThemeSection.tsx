@@ -25,7 +25,7 @@ function ThemeSection() {
   return (
     <div className="main-section">
       {theme.map((item) => (
-        <ThemeButton id={item.id} label={item.label} />
+        <ThemeButton id={item.id} key={item.id} label={item.label} />
       ))}
       <Button onClick={handleHelpOpen}>
         <ContactSupportIcon />
