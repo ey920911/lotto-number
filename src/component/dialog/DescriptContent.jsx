@@ -26,10 +26,6 @@ function DescriptContent(props) {
             ))}
           </TabList>
         </Box>
-        {/* {Object.keys(data).map((theme2) => {
-          console.log('theme2', typeof theme2);
-          return <TabPanel value={theme2}> {data[theme2]} </TabPanel>;
-        })} */}
         <TabPanel value="birth"> {data['birth']} </TabPanel>
         <TabPanel value="random"> {data['random']} </TabPanel>
         <TabPanel value="dream"> {data['dream']} </TabPanel>

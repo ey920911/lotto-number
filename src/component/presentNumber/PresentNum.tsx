@@ -18,7 +18,9 @@ function PresentNum({ num }: IProps) {
   return (
     <div className={classes.container}>
       {num.map((item) => (
-        <Button variant="contained">{item}</Button>
+        <Button key={item} variant="contained">
+          {item}
+        </Button>
       ))}
     </div>
   );

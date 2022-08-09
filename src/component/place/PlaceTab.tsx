@@ -51,7 +51,7 @@ function PlaceTab() {
           className={classes.tabStyle}
         >
           {palceArray.map(([key, value]) => (
-            <Tab label={value} />
+            <Tab key={key} label={value} />
           ))}
         </Tabs>
 
