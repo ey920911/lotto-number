@@ -30,7 +30,11 @@ TOP 5
 * 생성 버튼 클릭시 로또번호가 생성된다.
 
 ## :computer: 화면
+### 로또 번호
 ![image](https://user-images.githubusercontent.com/7992888/158790593-dee513b3-f5ff-40df-a0c9-0243ac801328.png)
+### 로또 명당 자리 
+![image](https://user-images.githubusercontent.com/7992888/183644669-139de93d-01f6-4be8-b3c6-c3b29f9bcf90.png)
+
 
 ## 기타
 
