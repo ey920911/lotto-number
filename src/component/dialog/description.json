@@ -1,7 +1,14 @@
 {
+  "genMode": {
+    "random": "랜덤 모드",
+    "birth": "사주 모드",
+    "dream": "꿈 모드",
+    "develop": "개발 관련"
+  },
   "description": {
     "random": "기존 당첨된 로또 번호에 대해 가중치를 둔 랜덤 로또번호를 생성합니다.",
+    "dream": "꿈에 나온 단어에 매칭되는 번호를 조합해 로또번호를 생성합니다.",
     "birth": "생년월일을 이용해 로또번호를 생성합니다.",
-    "dream": "꿈에 나온 단어에 매칭되는 번호를 조합해 로또번호를 생성합니다. 자세한 부분은 "
+    "develop": "github: https://github.com/ey920911/lotto-number "
   }
 }
