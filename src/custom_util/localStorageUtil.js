@@ -30,6 +30,7 @@ function set(key, value) {
   }
   const toJson = JSON.stringify(value);
 
+  console.log('toJson', toJson);
   localStorage.setItem(key, toJson);
   return null;
 }
