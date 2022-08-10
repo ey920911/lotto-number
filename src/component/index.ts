@@ -18,4 +18,4 @@ export { default as PresentNum } from './presentNumber/PresentNum';
 export { default as PlaceMainPage } from './place/PlaceTab';
 
 // statistics
-export { default as StaticticsPage } from './statistics/StatisticsPage';
+export { default as StaticticsPage } from './statistics/StatisticsPage.jsx';
