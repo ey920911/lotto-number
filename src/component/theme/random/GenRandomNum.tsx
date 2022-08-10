@@ -1,6 +1,6 @@
 import React from 'react';
-import { PresentNum } from 'component';
 import _ from 'lodash';
+import { PresentNum } from 'component';
 import { LOTTO_WEIGHT } from './lottoWeight';
 import DreamStore from 'store/DreamStore';
 
