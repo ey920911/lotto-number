@@ -31,9 +31,15 @@ TOP 5
 
 ## :computer: 화면
 ### 로또 번호
-![image](https://user-images.githubusercontent.com/7992888/158790593-dee513b3-f5ff-40df-a0c9-0243ac801328.png)
+<p display='flex' >
+<img src="https://user-images.githubusercontent.com/7992888/184054443-045495c8-d0fc-49ca-a838-a788be483be9.png" >
+<img src=""/>
+<img src="https://user-images.githubusercontent.com/7992888/184054778-06f04e2a-c28c-4731-af8c-7abc61a0e887.png"/>
+</p>
 ### 로또 명당 자리 
-![image](https://user-images.githubusercontent.com/7992888/183644669-139de93d-01f6-4be8-b3c6-c3b29f9bcf90.png)
+![image](https://user-images.githubusercontent.com/7992888/184054778-06f04e2a-c28c-4731-af8c-7abc61a0e887.png)
+### 통계 데이터
+![image](https://user-images.githubusercontent.com/7992888/184054549-4138f0f8-e76c-4a0f-9b49-ffa1253be5ee.png)
 
 
 ## 기타
