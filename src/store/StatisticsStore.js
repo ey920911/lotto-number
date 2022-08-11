@@ -1,5 +1,6 @@
 import { localStorageUtil } from 'custom_util';
-import { observable, makeObservable, action, flow } from 'mobx';
+import { observable, makeObservable, action, computed } from 'mobx';
+import _ from 'lodash';
 
 const LOTTO_DATA = '_lotto_data';
 
@@ -24,16 +25,19 @@ export default new (class StatisticsStore {
   @observable
   percentStatistics = 0;
 
+  @observable
+  lottoNumber = '';
+
   // TODO fix duplicated data
   @action
-  setLottoData(data, genDateStr = '') {
-    console.log('new data:', data);
+  setLottoData(num, genDateStr = '') {
+    console.log('new num:', num);
     const prevData = localStorageUtil.get(LOTTO_DATA) ?? [];
     console.log('prevData2', prevData);
     const enhancedPrevData = prevData;
 
     console.log('enhancedPrevData', enhancedPrevData);
-    const updatedData = [...enhancedPrevData, [...data, genDateStr]]; // prevData ? prevData.concat([data]) : [data];
+    const updatedData = [...enhancedPrevData, [genDateStr, ...num]]; // prevData ? prevData.concat([data]) : [data];
     console.log('updatedData', updatedData);
 
     localStorageUtil.set(LOTTO_DATA, updatedData);
@@ -56,29 +60,17 @@ export default new (class StatisticsStore {
     this.percentStatistics = result;
   }
 
-  calculateInteractionNumber(arr1, arr2) {
-    console.log(arr1, arr2, arr1.filter((ele) => arr2.includes(ele)).length);
-    return arr1.filter((ele) => arr2.includes(ele)).length;
-  }
-
   @action
-  setWinStatistics(lottoNum = []) {
-    const matchNumData = [];
-    const filteredData = this.lottoData.filter((ele) => {
-      const matchNum = this.calculateInteractionNumber(ele, lottoNum);
-      if (matchNum < 2) return false;
-      matchNumData.push(matchNum);
-      return true;
-    });
-    const filteredMatchNumData = filteredData.map((ele, idx) => [
-      ...ele,
-      matchNumData[idx],
-    ]);
-    this.winStatistics = filteredMatchNumData;
+  setLottoNum(num) {
+    this.setLottoNum(num);
   }
 
   get winStatistics() {
     return this.winStatistics;
+  }
+
+  get percentStatistics() {
+    return this.percentStatistics;
   }
 
   get lottoData() {
@@ -87,5 +79,44 @@ export default new (class StatisticsStore {
 
   get isServerMode() {
     return this.IS_SERVER_MODE;
+  }
+
+  calculateInteractionNumber(arr1, arr2) {
+    console.log(arr1, arr2, arr1.filter((ele) => arr2.includes(ele)).length);
+    return arr1.filter((ele) => arr2.includes(ele)).length;
+  }
+
+  calcPercentStatistics(lottoNum = []) {
+    const [matchNumData, ...rest] = this.calcMatchNum(lottoNum);
+    const matchPercent =
+      (100 * _.sum(matchNumData)) / (this.lottoData.length * 6);
+
+    return matchPercent;
+  }
+
+  calcWinStatistics(lottoNum = []) {
+    const [matchNumData, filteredData] = this.calcMatchNum(lottoNum);
+    const filteredMatchNumData = filteredData.map((ele, idx) => [
+      matchNumData[idx],
+      ...ele,
+    ]);
+
+    return this.sortData(filteredMatchNumData);
+  }
+
+  calcMatchNum(lottoNum = []) {
+    const matchNumData = [];
+    const filteredData = this.lottoData.filter((ele) => {
+      const matchNum = this.calculateInteractionNumber(ele, lottoNum);
+      if (matchNum < 3) return false;
+      matchNumData.push(matchNum);
+      return true;
+    });
+    return [matchNumData, filteredData];
+  }
+
+  sortData(data) {
+    data.sort((a, b) => b[0] - a[0]);
+    return data;
   }
 })();

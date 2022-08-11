@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import { TextField, Input } from '@material-ui/core';
 
-const SCORE = { 2: '5등', 3: '4등', 4: '3등', 5: '2등', 6: '1등' };
+const WIN_SCORE = { 3: '4등', 4: '3등', 5: '2등', 6: '1등' };
 
 function StatisticsPage() {
   const { statisticsStore } = useStore();
-  const { isServerMode, winStatistics } = statisticsStore;
+  const { isServerMode, winStatistics, percentStatistics } = statisticsStore;
   const [lottoNum, setLottoNum] = useState('');
+  const [result, setResult] = useState({ matchScore: [], percent: 0 });
 
   useEffect(() => {
     statisticsStore.initWinStatistics();
@@ -19,17 +20,20 @@ function StatisticsPage() {
     const { value } = event.target;
     const match = reg.test(value);
 
-    if (match)
-      statisticsStore.setWinStatistics(
-        value.split(' ').map((ele) => parseInt(ele))
-      );
+    if (match) {
+      const valueToIntArray = value.split(' ').map((ele) => parseInt(ele));
+      const matchScore = statisticsStore.calcWinStatistics(valueToIntArray);
+      const percent = statisticsStore.calcPercentStatistics(valueToIntArray);
+      setResult({ matchScore: matchScore, percent });
+    }
+
     setLottoNum(value);
   };
 
   return (
     <>
-      <p> {isServerMode ? 'server mode' : 'browser mode'}</p>
-
+      <p> {isServerMode ? 'Server mode' : 'Browser mode'}</p>
+      <p> 토요일 실제 로또 번호를 입력해 보세요.</p>
       <TextField
         id="realLottoNumber"
         label="lotto number"
@@ -41,15 +45,14 @@ function StatisticsPage() {
           placeholder: '12 2 11 3 6 2',
         }}
       />
+      <p>로또 자동 생성기 정확도 : {result.percent}% </p>
       <div>
-        {winStatistics.map(
-          ([num1, num2, num3, num4, num5, num6, date, matchScore]) => (
-            <p>
-              {SCORE[matchScore]} 당첨! 번호: {num1} {num2} {num3} {num4}
-              {num5} {num6} 번호 발급시간: {date}{' '}
-            </p>
-          )
-        )}
+        {result.matchScore.map(([score, date, ...num]) => (
+          <p>
+            {WIN_SCORE[score]}! 번호: {num.map((item) => item + ' ')}
+            발급시간: {date}
+          </p>
+        ))}
       </div>
     </>
   );
