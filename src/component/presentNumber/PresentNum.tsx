@@ -7,6 +7,7 @@ interface IProps {
 
 const useStyles = makeStyles({
   container: {
+    width: '100%',
     marginTop: '1rem',
     display: 'flex',
     justifyContent: 'center',
@@ -15,6 +16,9 @@ const useStyles = makeStyles({
     margin: '0 0.2rem',
     color: 'white',
     backgroundColor: '#163f92',
+    '&.MuiButton-root': {
+      minWidth: '3rem',
+    },
   },
   bonusButton: {
     margin: '0 0.2rem 0 1rem',
