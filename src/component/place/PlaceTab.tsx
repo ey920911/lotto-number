@@ -40,7 +40,7 @@ function PlaceTab() {
 
   return (
     <>
-      <p>지역 별 로또 명당 TOP 5</p>
+      <p>지역 별 로또 명당 TOP 10</p>
       <div className={classes.tabContainer}>
         <Tabs
           id="hot-palce-area"

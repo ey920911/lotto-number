@@ -1,3 +1,9 @@
+const NAV_MENU = {
+  lotto_number: '로또 번호',
+  place: '로또 명당',
+  statistics: '결과 통계',
+};
+
 const THEME = { random: '랜덤', dream: '꿈으로', birth: '사주로' };
 
 const PLACE = {
@@ -12,4 +18,4 @@ const PLACE = {
   gang_won: '강원',
   jeju: '제주',
 };
-export { THEME, PLACE };
+export { NAV_MENU, THEME, PLACE };

@@ -16,3 +16,6 @@ export { default as PresentNum } from './presentNumber/PresentNum';
 
 // place
 export { default as PlaceMainPage } from './place/PlaceTab';
+
+// statistics
+export { default as StaticticsPage } from './statistics/StatisticsPage.jsx';

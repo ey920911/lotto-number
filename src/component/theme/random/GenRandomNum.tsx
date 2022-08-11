@@ -1,6 +1,6 @@
 import React from 'react';
-import { PresentNum } from 'component';
 import _ from 'lodash';
+import { PresentNum } from 'component';
 import { LOTTO_WEIGHT } from './lottoWeight';
 import DreamStore from 'store/DreamStore';
 
@@ -16,7 +16,7 @@ interface IProps {
 
 function GenRandomNum({ isDream = false }: IProps): JSX.Element {
   const data = new Array();
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     const genNum = generateWeightNum({ isDream });
     data.push(genNum);
     for (let j = 0; j < i; j++) {

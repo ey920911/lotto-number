@@ -8,6 +8,7 @@ import {
   LinePage,
   IntroPage,
   PlaceMainPage,
+  StaticticsPage,
 } from 'component';
 
 function MainPage() {
@@ -28,11 +29,14 @@ function MainPage() {
         <Route exact path="/lotto_number">
           <LinePage line={lottoLine} handleChange={handleChange} />
         </Route>
+        <Route exact path="/theme">
+          <ThemeSection />
+        </Route>
         <Route path="/place">
           <PlaceMainPage />
         </Route>
-        <Route exact path="/theme">
-          <ThemeSection />
+        <Route exact path="/statistics">
+          <StaticticsPage />
         </Route>
         <Route path="/theme/random">
           <RandomNumber line={lottoLine} />
