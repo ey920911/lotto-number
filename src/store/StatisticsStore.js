@@ -31,17 +31,10 @@ export default new (class StatisticsStore {
   // TODO fix duplicated data
   @action
   setLottoData(num, genDateStr = '') {
-    console.log('new num:', num);
     const prevData = localStorageUtil.get(LOTTO_DATA) ?? [];
-    console.log('prevData2', prevData);
     const enhancedPrevData = prevData;
-
-    console.log('enhancedPrevData', enhancedPrevData);
     const updatedData = [...enhancedPrevData, [genDateStr, ...num]]; // prevData ? prevData.concat([data]) : [data];
-    console.log('updatedData', updatedData);
-
     localStorageUtil.set(LOTTO_DATA, updatedData);
-    console.log('updatedData2', localStorageUtil.get(LOTTO_DATA) ?? []);
   }
 
   @action
