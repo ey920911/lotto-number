@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import { TextField, Input } from '@material-ui/core';
 
-const WIN_SCORE = { 3: '4등', 4: '3등', 5: '2등', 6: '1등' };
-
 function StatisticsPage() {
   const { statisticsStore } = useStore();
   const { isServerMode, winStatistics, percentStatistics } = statisticsStore;
@@ -15,7 +13,7 @@ function StatisticsPage() {
     statisticsStore.initWinStatistics();
   }, []);
 
-  const reg = /^([0-9]{1,2} ){5}\d{1,2}$/;
+  const reg = /^([0-9]{1,2} ){6}\d{1,2}$/;
   const handleChange = (event) => {
     const { value } = event.target;
     const match = reg.test(value);
@@ -49,7 +47,7 @@ function StatisticsPage() {
       <div>
         {result.matchScore.map(([score, date, ...num]) => (
           <p>
-            {WIN_SCORE[score]}! 번호: {num.map((item) => item + ' ')}
+            {score}등! 번호: {num.map((item) => item + ' ')}
             발급시간: {date}
           </p>
         ))}

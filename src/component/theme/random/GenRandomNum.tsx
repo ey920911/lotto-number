@@ -16,7 +16,7 @@ interface IProps {
 
 function GenRandomNum({ isDream = false }: IProps): JSX.Element {
   const data = new Array();
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 6; i++) {
     const genNum = generateWeightNum({ isDream });
     data.push(genNum);
     for (let j = 0; j < i; j++) {

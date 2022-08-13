@@ -2,13 +2,13 @@ import { localStorageUtil } from 'custom_util';
 import { observable, makeObservable, action, computed } from 'mobx';
 import _ from 'lodash';
 
-const LOTTO_DATA = '_lotto_data';
-
 /**
  * 서버모드와, 브라우저 모드를 지원한다.
  * 브라우저 모드: 로또 데이터를 local storage에 저장한다.
  * TODO) 서버모드: 서버에서 통계성 데이터를 추출해 넘겨준다.
  */
+const LOTTO_DATA = '_lotto_data';
+const WIN_SCORE = { 3: 5, 4: 4, 5: 3, 6: 1 };
 
 export default new (class StatisticsStore {
   constructor() {
@@ -74,9 +74,13 @@ export default new (class StatisticsStore {
     return this.IS_SERVER_MODE;
   }
 
-  calculateInteractionNumber(arr1, arr2) {
-    console.log(arr1, arr2, arr1.filter((ele) => arr2.includes(ele)).length);
-    return arr1.filter((ele) => arr2.includes(ele)).length;
+  calculateInteractionNumber(genNum, lottoNum) {
+    const matchNum = genNum.filter((ele) =>
+      lottoNum.slice(0, 7).includes(ele)
+    ).length;
+    const hasBonusNum = genNum.includes(lottoNum.at(-1));
+
+    return [matchNum, hasBonusNum];
   }
 
   calcPercentStatistics(lottoNum = []) {
@@ -98,18 +102,23 @@ export default new (class StatisticsStore {
   }
 
   calcMatchNum(lottoNum = []) {
-    const matchNumData = [];
+    const winScoreData = [];
     const filteredData = this.lottoData.filter((ele) => {
-      const matchNum = this.calculateInteractionNumber(ele, lottoNum);
+      const [matchNum, hasBonusNum] = this.calculateInteractionNumber(
+        ele.slice(1, 7),
+        lottoNum
+      );
       if (matchNum < 3) return false;
-      matchNumData.push(matchNum);
+      winScoreData.push(
+        matchNum === 5 && hasBonusNum ? 2 : WIN_SCORE[matchNum]
+      );
       return true;
     });
-    return [matchNumData, filteredData];
+    return [winScoreData, filteredData];
   }
 
   sortData(data) {
-    data.sort((a, b) => b[0] - a[0]);
+    data.sort((a, b) => a[0] - b[0]);
     return data;
   }
 })();

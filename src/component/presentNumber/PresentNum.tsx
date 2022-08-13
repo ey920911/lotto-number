@@ -20,11 +20,11 @@ const useStyles = makeStyles({
       minWidth: '3rem',
     },
   },
-  bonusButton: {
-    margin: '0 0.2rem 0 1rem',
-    color: 'white',
-    backgroundColor: '#daa520',
-  },
+  // bonusButton: {
+  //   margin: '0 0.2rem 0 1rem',
+  //   color: 'white',
+  //   backgroundColor: '#daa520',
+  // },
 });
 
 function PresentNum({ num }: IProps) {
@@ -37,11 +37,7 @@ function PresentNum({ num }: IProps) {
   return (
     <div className={classes.container}>
       {num.map((item, idx) => (
-        <Button
-          key={item}
-          variant="contained"
-          className={idx === 6 ? classes.bonusButton : classes.normalButton}
-        >
+        <Button key={item} variant="contained" className={classes.normalButton}>
           {item}
         </Button>
       ))}
