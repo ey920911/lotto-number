@@ -21,7 +21,7 @@ function Birth(props: Line) {
   const classes = useStyle();
   const [create, setCreate] = React.useState(false);
 
-  const handleClick = (event: any) => {
+  const handleClick = () => {
     setCreate(true);
   };
 

@@ -1,7 +1,8 @@
-import { useStore } from 'custom_util';
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import { TextField, Input } from '@material-ui/core';
+import { useStore } from 'custom_util';
+import MatchScoreItem from './MatchScoreItem';
 
 function StatisticsPage() {
   const { statisticsStore } = useStore();
@@ -14,7 +15,7 @@ function StatisticsPage() {
   }, []);
 
   const reg = /^([0-9]{1,2} ){6}\d{1,2}$/;
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     const match = reg.test(value);
 
@@ -40,18 +41,11 @@ function StatisticsPage() {
         inputProps={{
           inputMode: 'numeric',
           pattern: '[1-9]{1}',
-          placeholder: '12 2 11 3 6 2',
+          placeholder: '12 8 11 3 6 36 2',
         }}
       />
       <p>로또 자동 생성기 정확도 : {result.percent}% </p>
-      <div>
-        {result.matchScore.map(([score, date, ...num]) => (
-          <p>
-            {score}등! 번호: {num.map((item) => item + ' ')}
-            발급시간: {date}
-          </p>
-        ))}
-      </div>
+      {<MatchScoreItem result={result.matchScore} />}
     </>
   );
 }
