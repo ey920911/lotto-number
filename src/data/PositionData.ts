@@ -434,3 +434,15 @@ const PLACE_DATA = {
 };
 
 export { PLACE_DATA };
+// export {
+//   ALL_DATA,
+//   SEOUL_DATA,
+//   KYEONG_GI_DATA,
+//   INCHEON_DATA,
+//   KEONG_BUCK_DATA,
+//   KYEONG_NAM_DATA,
+//   JEUN_BUCK_DATA,
+//   JEUN_NAM_DATA,
+//   JEJU_DATA,
+//   GANG_WON_DATA,
+// };

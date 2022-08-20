@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core';
-import PlaceItem from './PlaceDataContainer.jsx';
+import PlaceItem from './PlaceDataContainer';
 import { PLACE_DATA } from 'data/PositionData';
 
 const useStyles = makeStyles({

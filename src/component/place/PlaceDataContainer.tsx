@@ -4,9 +4,10 @@ import { makeStyles } from '@material-ui/core';
 import PlaceItemMap from './PlaceItemMap';
 import { PLACE_DATA } from 'data/PositionData';
 
-// interface IProps {
-//   name: String;
-// }
+interface IProps {
+  name: string;
+  data: { location: string; prizeNum: number; position: number[] };
+}
 const useStyles = makeStyles({
   placeName: { fontSize: '1.5rem', marginTop: '1rem' },
   placePosition: { fontSize: '1rem' },
@@ -14,8 +15,7 @@ const useStyles = makeStyles({
   placeItem: { display: 'flex', flexDirection: 'column' },
 });
 
-function PlaceDataContainer(props) {
-  const { name, data } = props;
+function PlaceDataContainer({ name, data }: IProps) {
   const classes = useStyles();
   // const placeList = Object.entries(PLACE_DATA[name]);
 
