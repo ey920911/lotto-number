@@ -10,24 +10,26 @@ import {
   PlaceMainPage,
   StaticticsPage,
 } from 'component';
+import { useInput } from 'hooks';
+
+const INIT_VALUE = 1;
+const REGEX_NUMBER = /^[0-9]+$/;
 
 function MainPage() {
-  const [lottoLine, setLottoLine] = React.useState(1);
   const history = useHistory();
-
-  const handleChange = (event: any) => {
-    const { value } = event.target.dataset;
-    console.dir(event.target);
-    setLottoLine(value);
-    history.push('/theme');
+  const useInputProps = {
+    initValue: INIT_VALUE,
+    validator: (value: string) => REGEX_NUMBER.test(value),
+    handleEvent: () => history.push('/theme'),
   };
+  const { value, onChange } = useInput(useInputProps);
 
   return (
     <div className="main-section">
       <IntroPage />
       <Switch>
         <Route exact path="/lotto_number">
-          <LinePage line={lottoLine} handleChange={handleChange} />
+          <LinePage line={value} handleChange={onChange} />
         </Route>
         <Route exact path="/theme">
           <ThemeSection />
@@ -39,13 +41,13 @@ function MainPage() {
           <StaticticsPage />
         </Route>
         <Route path="/theme/random">
-          <RandomNumber line={lottoLine} />
+          <RandomNumber line={value} />
         </Route>
         <Route path="/theme/dream">
-          <Dream line={lottoLine} />
+          <Dream line={value} />
         </Route>
         <Route path="/theme/birth">
-          <Birth line={lottoLine} />
+          <Birth line={value} />
         </Route>
       </Switch>
     </div>

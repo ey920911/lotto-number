@@ -38,10 +38,9 @@ function PlaceArea({ name = 'all' }) {
 
   return (
     <div className={classes.placeContainer}>
-      {placeList.map(([name, data], index) => {
-        if (index > visiblePage) return <></>;
-        return <PlaceItem name={name} data={data} />;
-      })}
+      {placeList.map(([name, data], index) =>
+        index > visiblePage ? <></> : <PlaceItem name={name} data={data} />
+      )}
       <div ref={loader} />
     </div>
   );
