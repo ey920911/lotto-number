@@ -289,6 +289,7 @@ export const DREAM_WORDS = {
     '공사판',
     '예술품',
     '사진',
+    'TV',
   ],
   19: [
     '사과',
