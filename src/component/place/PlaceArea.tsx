@@ -2,14 +2,21 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core';
 import PlaceItem from './PlaceDataContainer';
 import { PLACE_DATA } from 'data/PositionData';
+import { TPlaceArea } from 'types/PlaceAreaType';
+
+interface IProps {
+  name: string;
+}
 
 const useStyles = makeStyles({
   placeContainer: { display: 'flex', flexDirection: 'column', width: '100%' },
 });
 
-function PlaceArea({ name = 'all' }) {
+function PlaceArea({ name }: IProps) {
   const classes = useStyles();
-  const placeList = Object.entries(PLACE_DATA[name]);
+  const placeData = PLACE_DATA;
+  const placeList: [string, object][] = Object.entries(placeData);
+
   const loader = useRef(null);
   const [visiblePage, setVisiblePage] = useState(1);
 

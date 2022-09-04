@@ -6,7 +6,9 @@ import { PLACE_DATA } from 'data/PositionData';
 
 interface IProps {
   name: string;
-  data: { location: string; prizeNum: number; position: number[] };
+  data: any;
+  // [TODO] PlacArea 에서 type 정의해서 넘겨주기!
+  // { location: string; prizeNum: number; position: number[] };
 }
 const useStyles = makeStyles({
   placeName: { fontSize: '1.5rem', marginTop: '1rem' },
