@@ -64,7 +64,7 @@ function Dream(props: Line) {
     const words = Object.values(DREAM_WORDS);
 
     const filter = words.map((wordsArr) =>
-      wordsArr.filter((item) => item.startsWith(input))
+      wordsArr.filter((item) => item.startsWith(input.toUpperCase()))
     );
     setFilter(filter.flat(2));
     if (input === '') setFilter([]);
