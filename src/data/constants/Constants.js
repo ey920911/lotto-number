@@ -1,6 +1,7 @@
 const NAV_MENU = {
   lotto_number: '로또 번호',
   place: '로또 명당',
+  visualizing: '시각화',
   statistics: '결과 통계',
 };
 

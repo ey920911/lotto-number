@@ -11,6 +11,7 @@ import {
   StaticticsPage,
 } from 'component';
 import { useInput } from 'hooks';
+import { VisualizingPage } from '../visualizing/VisualizingPage';
 
 const INIT_VALUE = 1;
 const REGEX_NUMBER = /^[0-9]+$/;
@@ -39,6 +40,9 @@ function MainPage() {
         </Route>
         <Route exact path="/statistics">
           <StaticticsPage />
+        </Route>
+        <Route exact path="/visualizing">
+          <VisualizingPage />
         </Route>
         <Route path="/theme/random">
           <RandomNumber line={value} />
