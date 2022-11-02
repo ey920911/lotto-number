@@ -8,6 +8,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { LOTTO_WEIGHT } from '../theme/random/lottoWeight';
+import { TopLottoNumber } from './TopLottoNumber';
 
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 
@@ -30,7 +31,6 @@ const top5NumberWeight = weightData.sort()[40];
 
 const top5Numbers = LOTTO_WEIGHT.reduce((acc, curr, index) => {
   if (curr >= top5NumberWeight) acc.push(index);
-
   return acc;
 }, []);
 
@@ -51,5 +51,10 @@ const data = {
   ],
 };
 export const BarChart = () => {
-  return <Bar options={options} data={data} />;
+  return (
+    <div>
+      <TopLottoNumber top5Numbers={top5Numbers} />
+      <Bar options={options} data={data} />
+    </div>
+  );
 };
