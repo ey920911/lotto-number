@@ -5,6 +5,7 @@ import {
   BarElement,
   Title,
   Tooltip,
+  ChartOptions,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { LOTTO_WEIGHT } from '../theme/random/lottoWeight';
@@ -12,7 +13,7 @@ import { TopLottoNumber } from './TopLottoNumber';
 
 ChartJS.register(BarElement, LinearScale, CategoryScale, Title, Tooltip);
 
-export const options = {
+export const options: ChartOptions = {
   responsive: true,
   plugins: {
     legend: {
@@ -26,13 +27,16 @@ export const options = {
 };
 
 const weightData = [...LOTTO_WEIGHT];
-const labels = LOTTO_WEIGHT.map((weight, index) => index + 1);
+const labels = LOTTO_WEIGHT.map((weight: number, index: number) => index + 1);
 const top5NumberWeight = weightData.sort()[40];
 
-const top5Numbers = LOTTO_WEIGHT.reduce((acc, curr, index) => {
-  if (curr >= top5NumberWeight) acc.push(index);
-  return acc;
-}, []);
+const top5Numbers = LOTTO_WEIGHT.reduce(
+  (acc: number[], curr: number, index: number) => {
+    if (curr >= top5NumberWeight) acc.push(index);
+    return acc;
+  },
+  []
+);
 
 const bgColor = LOTTO_WEIGHT.map((weight, index) =>
   top5Numbers.includes(index)
