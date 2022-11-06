@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { LottoHeader, MainPage, LottoFooter } from 'component';
 
 function App() {
