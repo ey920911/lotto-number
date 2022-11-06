@@ -2,7 +2,7 @@
 
 로또 번호 추천 프로그램
 
-##  :scroll: 기술스텍
+##  :scroll: 기술스택
 React, JS, TS, MUI, React-router, Lodash, kakao-map
 
 ## :hammer: 기능
@@ -20,10 +20,12 @@ React, JS, TS, MUI, React-router, Lodash, kakao-map
   * 주소
   * 로또 당첨 횟수
 ### 통계
-* 번호 맞춘 퍼센트 정보 
-* 1~5등이 나온 번호, 로또 프로그램을 통해 번호를 생성한 날짜 정보 출력
+* 생성한 로또번호에 대한 정확도 체크를 확인한다.
+* 1~5등이 나온 번호, 로또 프로그램을 통해 번호를 생성한 날짜 정보 출력한다.
 > 로또 번호 생성시 번호 정보는 웹브라우저의 local storage에 저장된다. 
 > 통계 기능 사용시 local stroage에 저장된 지금까지 생성된 로또 정보 데이터를 가져와 통계 값을 계산한다.
+### 시각화
+* TOP5 로또 번호와 1-45번 까지 당첨된 횟수를 그래프로 보여줌
 
 ## :bookmark_tabs: 사용방법
 
@@ -51,6 +53,9 @@ React, JS, TS, MUI, React-router, Lodash, kakao-map
 
 ### 통계 데이터
 <img src="https://user-images.githubusercontent.com/7992888/184297258-a4635cba-0a09-44f5-875a-ecdd3297b2b2.png" width='400px' height='800px'/>
+
+### 시각화
+![image](https://user-images.githubusercontent.com/7992888/200165936-de4fab2d-3c6b-4658-9a29-0613952b13c1.png)
 
 ## 기타
 
