@@ -23,26 +23,20 @@
   margin: '1rem';
 }
 
-@media screen and (min-width: 480px) {
-  .lotto-num {
+.lotto-num {
+  @include lotto-circle;
+  width: 8rem;
+  height: 8rem;
+  font-size: 3rem;
+
+  @media screen and (max-width: 960px) {
     @include lotto-circle;
     width: 4rem;
     height: 4rem;
     font-size: 1.5rem;
   }
-}
 
-@media screen and (min-width: 800px) {
-  .lotto-num {
-    @include lotto-circle;
-    width: 8rem;
-    height: 8rem;
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .lotto-num {
+  @media screen and (max-width: 480px) {
     @include lotto-circle;
     width: 1.5rem;
     height: 1.5rem;

@@ -19,17 +19,30 @@ const useStyles = makeStyles({
 
 function PlaceDataContainer({ name, data }: IProps) {
   const classes = useStyles();
-  // const placeList = Object.entries(PLACE_DATA[name]);
+  const dataArr = Object.keys(data);
 
   return (
     <>
-      <div className={classes.placeItem}>
-        <div className={classes.placeName}> {name}</div>
-        <p className={classes.placePosition}>
-          주소: {data.location} 당첨 횟수: {data.prizeNum}
-        </p>
-      </div>
-      <PlaceItemMap name={name} x={data.position[0]} y={data.position[1]} />
+      {dataArr.map((ele) => {
+        console.log('ele', ele);
+        return (
+          <>
+            <div className={classes.placeItem}>
+              <div className={classes.placeName}> {ele}</div>
+              <p className={classes.placePosition}>
+                주소: {data[ele].location} 당첨 횟수: {data[ele].prizeNum}
+              </p>
+            </div>
+            <PlaceItemMap
+              name={ele}
+              x={data[ele].position[0]}
+              y={data[ele].position[1]}
+            />
+          </>
+        );
+      })}
+
+      {/* <PlaceItemMap name={name} x={data.position[0]} y={data.position[1]} /> */}
     </>
   );
 }

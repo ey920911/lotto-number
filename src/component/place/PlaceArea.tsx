@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core';
-import PlaceItem from './PlaceDataContainer';
+import PlaceDataContainer from './PlaceDataContainer';
 import { PLACE_DATA } from 'data/PositionData';
 import { TPlaceArea } from 'types/PlaceAreaType';
 
@@ -23,6 +23,7 @@ function PlaceArea({ name }: IProps) {
   // init visiblePage value
   useEffect(() => {
     setVisiblePage(1);
+    console.log('name: ', name);
   }, [name]);
 
   const handleObserver = useCallback((entries) => {
@@ -43,10 +44,16 @@ function PlaceArea({ name }: IProps) {
     if (loader.current) observer.observe(loader.current);
   }, [handleObserver]);
 
+  console.log('placeList: ', placeList);
+
   return (
     <div className={classes.placeContainer}>
       {placeList.map(([name, data], index) =>
-        index > visiblePage ? <></> : <PlaceItem name={name} data={data} />
+        index > visiblePage ? (
+          <></>
+        ) : (
+          <PlaceDataContainer name={name} data={data} />
+        )
       )}
       <div ref={loader} />
     </div>
