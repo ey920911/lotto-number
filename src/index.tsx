@@ -5,6 +5,7 @@ import { Provider } from 'mobx-react';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import * as store from './store';
 
 ReactDOM.render(
@@ -17,5 +18,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
+serviceWorkerRegistration.unregister();
 reportWebVitals();
