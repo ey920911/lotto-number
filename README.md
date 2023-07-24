@@ -63,3 +63,8 @@ React, JS, TS, MUI, React-router, Lodash, kakao-map
 * 가중치 랜덤 로직 관련 설명: https://blog.naver.com/ey920911/222797490814
 * Playground: 
 https://ey920911.github.io/lotto-number/
+
+
+## TODO
+
+* open ai 추천 모드 추가
