@@ -44,6 +44,7 @@ React, JS, TS, MUI, React-router, Lodash, kakao-map
 * 입력한 값이 유효한 로또 값이라면 지금까지 프로그램을 통해 생성한 로또번호와 실제 로또번호의 매칭 확율과 1~5등까지 당첨됐던 번호 정보를 화면에 보여준다.
 
 ## :computer: 화면
+
 ### 로또 번호
 
 <img src="https://user-images.githubusercontent.com/7992888/184054443-045495c8-d0fc-49ca-a838-a788be483be9.png" width='400px' height='800px'/>
@@ -60,3 +61,5 @@ React, JS, TS, MUI, React-router, Lodash, kakao-map
 ## 기타
 
 * 가중치 랜덤 로직 관련 설명: https://blog.naver.com/ey920911/222797490814
+* Playground: 
+https://ey920911.github.io/lotto-number/
