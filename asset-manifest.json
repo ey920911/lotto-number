@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/lotto-number/static/css/main.74e9c384.css",
-    "main.js": "/lotto-number/static/js/main.13ef3232.js",
+    "main.css": "/lotto-number/static/css/main.60b3347a.css",
+    "main.js": "/lotto-number/static/js/main.1190890c.js",
     "static/js/787.b7056e53.chunk.js": "/lotto-number/static/js/787.b7056e53.chunk.js",
     "static/media/lotto_icon.png": "/lotto-number/static/media/lotto_icon.b434172f3efa615fd2c8.png",
     "index.html": "/lotto-number/index.html",
-    "main.74e9c384.css.map": "/lotto-number/static/css/main.74e9c384.css.map",
-    "main.13ef3232.js.map": "/lotto-number/static/js/main.13ef3232.js.map",
+    "main.60b3347a.css.map": "/lotto-number/static/css/main.60b3347a.css.map",
+    "main.1190890c.js.map": "/lotto-number/static/js/main.1190890c.js.map",
     "787.b7056e53.chunk.js.map": "/lotto-number/static/js/787.b7056e53.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74e9c384.css",
-    "static/js/main.13ef3232.js"
+    "static/css/main.60b3347a.css",
+    "static/js/main.1190890c.js"
   ]
 }
